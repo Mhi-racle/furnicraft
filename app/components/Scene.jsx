@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from 'react'
-import { PlaneGeometry } from 'three'
+import { DirectionalLight, PlaneGeometry } from 'three'
 import { angleToRadius } from '../utils/angle'
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import * as THREE from "three"
+
 import { useFrame } from '@react-three/fiber'
 const Scene = () => {
 
@@ -26,24 +28,39 @@ useEffect(() => {
   return (
     <>
       <PerspectiveCamera makeDefault position={[0,1,5]}/>
-      <OrbitControls autoRotate={true} ref={orbitControlRef}  />
+      <OrbitControls  ref={orbitControlRef}  />
 
 
       
         {/*Ball*/}
-        <mesh position={[0,0.5,0]}>
+        <mesh position={[0,0.5,0]} castShadow>
             <sphereGeometry args={[0.5, 32, 32]} />
-            <meshStandardMaterial color= '#FFFFFF'/>
+            <meshStandardMaterial color= '#FFFFFF' metalness={0.6} roughness={0.2}/>
         </mesh>
 
-        {/*Plane Geometry*/}
-        <mesh rotation={[-(angleToRadius(90)),0,0]}>
-            <planeGeometry args={[7,7]} />
-            <meshStandardMaterial color = '#0000FF' />
-            </mesh>
+        {/*Floor*/}
+        <mesh rotation={[-(angleToRadius(90)),0,0]} receiveShadow>
+            <planeGeometry args={[20,20]} />
+            <meshStandardMaterial color = '#1ea3d8' />
+        </mesh>
+
+
     {/* Ambient Light */}
 
-    <ambientLight args={["##ffffff", 3]} />
+    <ambientLight args={["##ffffff", 2]} />
+
+    {/* Spot Light */}
+    <spotLight args={["#ffffff", 15, 7, angleToRadius(45), 0.4]} position= {[-3, 1,0]} castShadow/>
+
+    {/* Environment */}
+    <Environment background>
+
+      <mesh>
+        <sphereGeometry args={[50, 100, 100]} />
+       <meshBasicMaterial side={THREE.BackSide} color='#1ea3d8' />
+      </mesh>
+    </Environment>
+
     </>
   )
 }

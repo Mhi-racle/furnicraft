@@ -10,7 +10,7 @@ const page = () => {
   return (
     <main className=" w-screen h-screen">
       <h1> Ball</h1>
-      <Canvas className=" h-screen w-screen">
+      <Canvas className=" h-screen w-screen" shadows>
         <Suspense fallback={null}>
         <Scene/>
         </Suspense>
