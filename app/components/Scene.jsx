@@ -27,6 +27,7 @@ useEffect(() => {
 },[orbitControlRef.current] )
   return (
     <>
+      {/* Camera */}
       <PerspectiveCamera makeDefault position={[0,1,5]}/>
       <OrbitControls  ref={orbitControlRef}  />
 
@@ -35,13 +36,13 @@ useEffect(() => {
         {/*Ball*/}
         <mesh position={[0,0.5,0]} castShadow>
             <sphereGeometry args={[0.5, 32, 32]} />
-            <meshStandardMaterial color= '#FFFFFF' metalness={0.6} roughness={0.2}/>
+            <meshStandardMaterial color= '#333333' metalness={0.6} roughness={0.2}/>
         </mesh>
 
         {/*Floor*/}
         <mesh rotation={[-(angleToRadius(90)),0,0]} receiveShadow>
             <planeGeometry args={[20,20]} />
-            <meshStandardMaterial color = '#1ea3d8' />
+            <meshStandardMaterial color = '#ffffff' />
         </mesh>
 
 
@@ -57,7 +58,7 @@ useEffect(() => {
 
       <mesh>
         <sphereGeometry args={[50, 100, 100]} />
-       <meshBasicMaterial side={THREE.BackSide} color='#1ea3d8' />
+       <meshBasicMaterial side={THREE.BackSide} color='##ffffff' />
       </mesh>
     </Environment>
 
