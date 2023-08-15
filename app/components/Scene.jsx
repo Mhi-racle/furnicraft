@@ -51,7 +51,7 @@ useEffect(() => {
     <ambientLight args={["##ffffff", 2]} />
 
     {/* Spot Light */}
-    <spotLight args={["#ffffff", 15, 7, angleToRadius(45), 0.4]} position= {[-3, 1,0]} castShadow/>
+    <spotLight args={["#ffffff", 20, 10, angleToRadius(45), 0.4]} position= {[-3, 1,0]} castShadow/>
 
     {/* Environment */}
     <Environment background>

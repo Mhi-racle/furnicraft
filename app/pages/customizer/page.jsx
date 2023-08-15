@@ -10,9 +10,9 @@ const page = () => {
   return (
     <main className=" w-screen h-screen flex">
      
-     <div className=' bg-white h-screen w-72'>
+     <div className='relative bg-white h-screen w-72 shadow-xl '>
      </div>
-      <Canvas className=" h-screen w-full " shadows>
+      <Canvas className=" h-screen w-screen relative" shadows>
         <Suspense fallback={null}>
         <Scene/>
         </Suspense>
