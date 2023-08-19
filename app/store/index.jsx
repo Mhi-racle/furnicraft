@@ -1,7 +1,10 @@
 import { proxy } from "valtio";
+// Chairs
 
 const state = proxy({
-    tabOpen : true
+    tabOpen : true,
+    current : "Chair1"
+
 });
 
 
