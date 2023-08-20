@@ -10,7 +10,7 @@ import Nav from '@/app/components/Nav'
 import { useSnapshot} from 'valtio'
 import { proxy, use } from 'valtio'
 import state from '@/app/store'
-
+import { SketchPicker } from 'react-color'
 // Images
 import Image1 from "public/images/chairs/armchair.png"
 import Image2 from "public/images/chairs/chair2.png"
@@ -22,11 +22,20 @@ import Image7 from "public/images/chairs/chair7.png"
 import Image8 from "public/images/chairs/chair8.png"
 import Image9 from "public/images/chairs/chair9.png"
 
+
 import ResetIcon from "public/images/reset.png"
-
-
 import arrowIcon from "public/images/arrow-icon-1177.png"
 
+
+import Texture1 from "public/textures/fabric1/fabric_pattern_07_col_1_1k.png"
+import Texture2 from "public/textures/denim1.blend/textures/denmin_fabric_02_diff_1k.jpg"
+import Texture3 from "public/textures/denim2.blend/textures/denim_fabric_diff_1k.jpg"
+import Texture4 from "public/textures/fabric2.blend/textures/fabric_pattern_05_col_01_1k.png"
+import Texture5 from "public/textures/leather1.blend/textures/leather_red_02_coll1_1k.png"
+import Texture6 from "public/textures/leather2.blend/textures/brown_leather_albedo_1k.jpg"
+import Texture7 from "public/textures/leather3.blend/textures/leather_white_diff_1k.jpg"
+import Texture8 from "public/textures/leather4/textures/fabric_leather_02_diff_1k.jpg"
+import Texture9 from "public/textures/leather5.blend/textures/leather_red_03_coll1_1k.png"
 
 import Card from '@/app/components/Card'
 const page = () => {
@@ -36,10 +45,14 @@ const page = () => {
 
   function ResetDimensions(){
     state.height = 1
-    state.width = 
+    state.width = 1
     state.thickness = 1
   }
 
+  const handleOnChange = (color) =>{
+    console.log(color)
+      state.currentColor = (color.hex)
+  }
 
   return (
     <main className=' h-screen app overflow-hidden w-screen select-none'>
@@ -170,7 +183,7 @@ const page = () => {
       onClick={() => setOpen(!open)} />
      
      {/* Properties Tab */}
-<section className=' h-[670px] w-48 md:w-80  absolute right-0 flex-row  self-center shadow-2xl bg-white rounded-md'>
+<section className=' h-[780px] w-48 md:w-80  absolute right-0 flex-row overflow-y-scroll self-center shadow-2xl bg-white rounded-md'>
       <header className=' font-Poppins  w-full bg-slate-100 p-3 h-10 text-[14px] text-stone-500 shadow-lg'> 
       <p> Properties </p>
       </header>
@@ -181,48 +194,64 @@ const page = () => {
       </section>
       <hr/>
 
-      
+      <section className='h-full'>
       {/* Size Section */}
-      <React.Fragment className= " overflow-y-scroll">
+      <section className= " w-full overflow-y-scroll ">
       <section className='flex ml-3  p-3 '>
        <div className=' h-full gap-4 w-full'>
          <h1 className=' text-[14px]'> Size</h1>
 
          <>
             <p className=' text-[13px] mt-4 text-neutral-500'> Width</p>
-            <input type='range' min={1} max={5} step={1} value={state.width} onChange={(e) => {state.width=e.target.value}} className=' w-40 '/>
-            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.width}</p1>
+            <input type='range' min={1} max={5} step={0.2} value={state.width} onChange={(e) => {state.width=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.width + " mm"}</p1>
           </>
           <>
             <p className=' text-[13px] mt-4 text-neutral-500'> Height</p>
-            <input type='range' min={1} max={5} step={1} value={state.height} onChange={(e) => {state.height=e.target.value}} className=' w-40 '/>
-            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.height}</p1>
+            <input type='range' min={1} max={5} step={0.2} value={state.height} onChange={(e) => {state.height=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.height + " mm"}</p1>
           </>
           <>
             <p className=' text-[13px] mt-4 text-neutral-500'> Thickness</p>
-            <input type='range' min={1} max={5} step={1} value={state.thickness} onChange={(e) => {state.thickness=e.target.value}} className=' w-40 '/>
-            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.thickness}</p1>
+            <input type='range' min={1} max={5} step={0.2} value={state.thickness} onChange={(e) => {state.thickness=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.thickness + " mm"}</p1>
           </>
           <Image src={ResetIcon} height={20} width={20} alt='reset icon' className=' hover:cursor-pointer hover:bg-slate-100 mt-2 ' onClick={ResetDimensions}/>
           <hr className=' w-full mt-6'/>
        </div>
       </section>
 
-      {/* Material Section  */}
-      <section className='flex ml-3  p-3 '>
+     
+      </section>
+       {/* Material Section  */}
+       <section className=' mr-6 overflow-y-scroll p-3 w-full'>
        <div className=' h-full gap-4 w-full'>
          <h1 className=' text-[14px]'> Material</h1>
 
-         <>
-            <p className=' text-[13px] mt-4 text-neutral-500'> Width</p>
-            <input type='range' min={1} max={5} step={1} value={state.width} onChange={(e) => {state.width=e.target.value}} className=' w-40 '/>
-            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.width}</p1>
-          </>
+         <section className=' grid grid-cols-5 overflow-y-scroll w-full mt-4 mr-4 gap-4 h-full p-3'>
+           <Image src = {Texture1} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' />
+           <Image src = {Texture2} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture3} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture4} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture5} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture6} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture7} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture8} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture9} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+          </section>
         
+      
           <hr className=' w-full mt-6'/>
        </div>
+
+       <SketchPicker 
+          color={state.currentColor} 
+          onChangeComplete={ handleOnChange}
+          className=' absolute h-60 mt-8 hover:cursor-pointer '
+          />
+        
       </section>
-      </React.Fragment>
+      </section>
 </section>
 
     </section>

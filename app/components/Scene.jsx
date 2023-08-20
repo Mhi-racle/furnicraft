@@ -76,7 +76,10 @@ useEffect(() => {
         </mesh>
 
 
-    {/* Ambient Light useGLTF('/Models/chair1.glb')*/}
+    {/* Ambient Light useGLTF('/Models/chair1.glb')
+    const texture1 = new TextureLoader().load("../textures/fabric1/fabric_pattern_07_col_1_1k.png")
+ 
+    */}
 
     <ambientLight args={["##ffffff", 1]} />
 
