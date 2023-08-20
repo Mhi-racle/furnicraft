@@ -15,7 +15,8 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/Models/chair1.glb')
   return (
     <group {...props} dispose={null}>
-      < mesh geometry={nodes['Cylinder001_Material_#2146932551_0'].geometry} material={materials.Material_2146932551} rotation={[-Math.PI / 2, 0, 0]} scale={[0.001,0.001,0.001]} material-color="gray"  />
+      < mesh geometry={nodes['Cylinder001_Material_#2146932551_0'].geometry} material={materials.Material_2146932551} rotation={[-Math.PI / 2, 0, 0]} 
+      scale={[state.width * 0.001, state.thickness * 0.001,state.height *0.001]} material-color="gray"  />
     </group>
   )
 }

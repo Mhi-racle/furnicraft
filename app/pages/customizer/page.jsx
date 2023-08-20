@@ -22,7 +22,7 @@ import Image7 from "public/images/chairs/chair7.png"
 import Image8 from "public/images/chairs/chair8.png"
 import Image9 from "public/images/chairs/chair9.png"
 
-
+import ResetIcon from "public/images/reset.png"
 
 
 import arrowIcon from "public/images/arrow-icon-1177.png"
@@ -34,12 +34,15 @@ const page = () => {
   const [open, setOpen] = useState(true)
   const snap = useSnapshot(state)
 
-  function toggleChair1(){
-    state.current = !"Chair1";
+  function ResetDimensions(){
+    state.height = 1
+    state.width = 
+    state.thickness = 1
   }
 
+
   return (
-    <main className=' h-screen app overflow-hidden w-screen'>
+    <main className=' h-screen app overflow-hidden w-screen select-none'>
  <nav className=' w-full h-9'>
         </nav>
     <section className=" w-full h-full flex absolute overflow-hidden ">
@@ -167,9 +170,60 @@ const page = () => {
       onClick={() => setOpen(!open)} />
      
      {/* Properties Tab */}
-    <section className=' h-[400px] w-96 absolute app right-0 flex self-center shadow-2xl bg-white rounded-md'>
-      <h1 className=' font-Poppins'> Properties</h1>
-    </section>
+<section className=' h-[670px] w-48 md:w-80  absolute right-0 flex-row  self-center shadow-2xl bg-white rounded-md'>
+      <header className=' font-Poppins  w-full bg-slate-100 p-3 h-10 text-[14px] text-stone-500 shadow-lg'> 
+      <p> Properties </p>
+      </header>
+
+      <section className='flex  p-3 '>
+        <Image src={Image1} height={80} width={80} alt='Arm Chair' />
+        <h1 className='relative top-7 text-[13px] ml-2'> Arm Sofa Chair</h1>
+      </section>
+      <hr/>
+
+      
+      {/* Size Section */}
+      <React.Fragment className= " overflow-y-scroll">
+      <section className='flex ml-3  p-3 '>
+       <div className=' h-full gap-4 w-full'>
+         <h1 className=' text-[14px]'> Size</h1>
+
+         <>
+            <p className=' text-[13px] mt-4 text-neutral-500'> Width</p>
+            <input type='range' min={1} max={5} step={1} value={state.width} onChange={(e) => {state.width=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.width}</p1>
+          </>
+          <>
+            <p className=' text-[13px] mt-4 text-neutral-500'> Height</p>
+            <input type='range' min={1} max={5} step={1} value={state.height} onChange={(e) => {state.height=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.height}</p1>
+          </>
+          <>
+            <p className=' text-[13px] mt-4 text-neutral-500'> Thickness</p>
+            <input type='range' min={1} max={5} step={1} value={state.thickness} onChange={(e) => {state.thickness=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.thickness}</p1>
+          </>
+          <Image src={ResetIcon} height={20} width={20} alt='reset icon' className=' hover:cursor-pointer hover:bg-slate-100 mt-2 ' onClick={ResetDimensions}/>
+          <hr className=' w-full mt-6'/>
+       </div>
+      </section>
+
+      {/* Material Section  */}
+      <section className='flex ml-3  p-3 '>
+       <div className=' h-full gap-4 w-full'>
+         <h1 className=' text-[14px]'> Material</h1>
+
+         <>
+            <p className=' text-[13px] mt-4 text-neutral-500'> Width</p>
+            <input type='range' min={1} max={5} step={1} value={state.width} onChange={(e) => {state.width=e.target.value}} className=' w-40 '/>
+            <p1 className=" m-6 relative bottom-[4px] text-[13px]  ">{state.width}</p1>
+          </>
+        
+          <hr className=' w-full mt-6'/>
+       </div>
+      </section>
+      </React.Fragment>
+</section>
 
     </section>
     </main>

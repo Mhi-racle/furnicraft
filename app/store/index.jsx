@@ -3,8 +3,13 @@ import { proxy } from "valtio";
 
 const state = proxy({
     tabOpen : true,
-    current : "Chair1"
+    current : "Chair1",
 
+
+    // slider values
+    width : 1,
+    height : 1,
+    thickness : 1
 });
 
 
