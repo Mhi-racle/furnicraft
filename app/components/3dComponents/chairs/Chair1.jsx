@@ -10,6 +10,16 @@ import * as THREE from "three"
 export default function Chair1(props) {
   //textures
   const Texture1 = new THREE.TextureLoader().load("../textures/fabric1/fabric_pattern_07_col_1_1k.png")
+  const Texture2 = new THREE.TextureLoader().load("../textures/denim1.blend/textures/denmin_fabric_02_diff_1k.jpg")
+  const Texture3 = new THREE.TextureLoader().load("../textures/denim2.blend/textures/denim_fabric_diff_1k.jpg")
+  const Texture4 = new THREE.TextureLoader().load("../textures/fabric2.blend/textures/fabric_pattern_05_col_01_1k.png")
+  const Texture5 = new THREE.TextureLoader().load("../textures/leather1.blend/textures/leather_red_02_coll1_1k.png")
+  const Texture6 = new THREE.TextureLoader().load("../textures/leather2.blend/textures/brown_leather_albedo_1k.jpg")
+  const Texture7 = new THREE.TextureLoader().load("../textures/leather3.blend/textures/leather_white_diff_1k.jpg")
+  const Texture8 = new THREE.TextureLoader().load("../textures/leather4/textures/fabric_leather_02_diff_1k.jpg")
+  const Texture9 = new THREE.TextureLoader().load("../textures/leather5.blend/textures/leather_red_03_coll1_1k.png")
+  
+  
 
 
 
@@ -20,7 +30,19 @@ export default function Chair1(props) {
       <mesh geometry={nodes['Cylinder001_Material_#2146932551_0'].geometry} 
       material={materials.Material_2146932551} 
       material-color = {state.currentColor}
-      rotation={[-Math.PI / 2, 0, 0]} scale={[state.width * 0.001, state.thickness * 0.001, state.height * 0.001]} />
+      rotation={[-Math.PI / 2, 0, 0]} scale={[state.width * 0.001, state.thickness * 0.001, state.height * 0.001]} castShadow>
+
+     {state.currentTexture==="Texture1" &&<meshStandardMaterial map={Texture1} roughness={0.8}  />} 
+     {state.currentTexture==="Texture2" &&<meshStandardMaterial map={Texture2} roughness={0.8} />} 
+     {state.currentTexture==="Texture3" &&<meshStandardMaterial map={Texture3} roughness={0.8} />} 
+     {state.currentTexture==="Texture4" &&<meshStandardMaterial map={Texture4} roughness={0.8} />} 
+     {state.currentTexture==="Texture5" &&<meshStandardMaterial map={Texture5} roughness={0.8} />} 
+     {state.currentTexture==="Texture6" &&<meshStandardMaterial map={Texture6} roughness={0.8} />} 
+     {state.currentTexture==="Texture7" &&<meshStandardMaterial map={Texture7} roughness={0.8} />} 
+     {state.currentTexture==="Texture8" &&<meshStandardMaterial map={Texture8} roughness={0.8} />} 
+     {state.currentTexture==="Texture9" &&<meshStandardMaterial map={Texture9} roughness={0.8} />} 
+
+        </mesh>
     </group>
   )
 }

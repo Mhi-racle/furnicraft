@@ -183,9 +183,12 @@ const page = () => {
       onClick={() => setOpen(!open)} />
      
      {/* Properties Tab */}
-<section className=' h-[780px] w-48 md:w-80  absolute right-0 flex-row overflow-y-scroll self-center shadow-2xl bg-white rounded-md'>
-      <header className=' font-Poppins  w-full bg-slate-100 p-3 h-10 text-[14px] text-stone-500 shadow-lg'> 
+<section className={`${state.sideTapOpen ? " h-[780px]" : "h-10 w-6 bottom-[400px]"} duration-300 w-48 md:w-80  absolute right-0 flex-row overflow-y-scroll self-center shadow-2xl bg-white rounded-md`}>
+      <header className=' font-Poppins flex gap-48 w-full bg-slate-100 p-3 h-10 text-[14px] text-stone-500 shadow-lg'> 
+      
       <p> Properties </p>
+      <Image src={arrowIcon} height={30} width={30} alt='arrow' className=' -rotate-90 scale-y-150 hover:cursor-pointer' 
+      onClick={()=> state.sideTapOpen = !state.sideTapOpen}/>
       </header>
 
       <section className='flex  p-3 '>
@@ -229,15 +232,15 @@ const page = () => {
          <h1 className=' text-[14px]'> Material</h1>
 
          <section className=' grid grid-cols-5 overflow-y-scroll w-full mt-4 mr-4 gap-4 h-full p-3'>
-           <Image src = {Texture1} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' />
-           <Image src = {Texture2} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture3} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture4} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture5} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture6} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture7} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture8} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
-           <Image src = {Texture9} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer'/>
+           <Image src = {Texture1} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture1"}} />
+           <Image src = {Texture2} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture2"}} />
+           <Image src = {Texture3} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture3"}} />
+           <Image src = {Texture4} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture4"}} />
+           <Image src = {Texture5} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture5"}} />
+           <Image src = {Texture6} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture6"}} />
+           <Image src = {Texture7} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture7"}} />
+           <Image src = {Texture8} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture8"}} />
+           <Image src = {Texture9} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture9"}} />
           </section>
         
       

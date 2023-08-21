@@ -6,12 +6,16 @@ Files: public/Models/chair8.glb [2.94MB] > chair8-transformed.glb [338.44KB] (88
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import state from '@/app/store'
 
 export default function Chair8(props) {
   const { nodes, materials } = useGLTF('/Models/chair8.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Cube007_Material002_0.geometry} material={materials['Material.002']} rotation={[-Math.PI / 2, 0, -Math.PI / 2]} />
+      <mesh geometry={nodes.Cube007_Material002_0.geometry} 
+      material={materials['Material.002']}
+       rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+       scale={[state.width* 0.517,state.height* 0.517,state.thickness* 0.517]} />
     </group>
   )
 }

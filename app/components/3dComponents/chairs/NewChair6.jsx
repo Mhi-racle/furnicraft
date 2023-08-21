@@ -6,12 +6,14 @@ Files: public/Models/newChair6.glb [2.13MB] > newChair6-transformed.glb [178.31K
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import state from '@/app/store'
 
 export default function NewChair6(props) {
   const { nodes, materials } = useGLTF('/Models/newChair6.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.defaultMaterial001.geometry} material={materials.DefaultMaterial} scale={0.011} />
+      <mesh geometry={nodes.defaultMaterial001.geometry} 
+      material={materials.DefaultMaterial} scale={[state.width* 0.011,state.height* 0.011,state.thickness* 0.011]} />
     </group>
   )
 }
