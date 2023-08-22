@@ -13,7 +13,9 @@ export default function NewChair6(props) {
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.defaultMaterial001.geometry} 
-      material={materials.DefaultMaterial} scale={[state.width* 0.011,state.height* 0.011,state.thickness* 0.011]} />
+      material={materials.DefaultMaterial} 
+      scale={[state.width* 0.012,state.height* 0.012,state.thickness* 0.012]} 
+      material-color = {state.currentColor}/>
     </group>
   )
 }

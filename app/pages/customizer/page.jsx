@@ -11,6 +11,8 @@ import { useSnapshot} from 'valtio'
 import { proxy, use } from 'valtio'
 import state from '@/app/store'
 import { SketchPicker } from 'react-color'
+
+
 // Images
 import Image1 from "public/images/chairs/armchair.png"
 import Image2 from "public/images/chairs/chair2.png"
@@ -25,7 +27,7 @@ import Image9 from "public/images/chairs/chair9.png"
 
 import ResetIcon from "public/images/reset.png"
 import arrowIcon from "public/images/arrow-icon-1177.png"
-
+import cameraIcon from "public/images/camera.png"
 
 import Texture1 from "public/textures/fabric1/fabric_pattern_07_col_1_1k.png"
 import Texture2 from "public/textures/denim1.blend/textures/denmin_fabric_02_diff_1k.jpg"
@@ -38,6 +40,7 @@ import Texture8 from "public/textures/leather4/textures/fabric_leather_02_diff_1
 import Texture9 from "public/textures/leather5.blend/textures/leather_red_03_coll1_1k.png"
 
 import Card from '@/app/components/Card'
+import html2canvas from 'html2canvas'
 const page = () => {
 
   const [open, setOpen] = useState(true)
@@ -49,13 +52,33 @@ const page = () => {
     state.thickness = 1
   }
 
+  //take screenshot
+  const takeScreenshot = () => {
+    html2canvas.al
+    const element = document.getElementById("canvas")
+    if(!element){
+      return;
+    }
+    html2canvas(element).then((canvas) => {
+      
+      let image = canvas.toDataURL("image/jpeg")
+
+      const a= document.createElement("a");
+      a.href = image
+      a.download = "Furniture.jpeg"
+      a.click()
+    }).catch(err=>{
+      console.error("Screenshot cannot be taken")
+    })
+  }
+
   const handleOnChange = (color) =>{
     console.log(color)
       state.currentColor = (color.hex)
   }
 
   return (
-    <main className=' h-screen app overflow-hidden w-screen select-none'>
+    <main className=' h-screen app overflow-hidden w-screen select-none' >
  <nav className=' w-full h-9'>
         </nav>
     <section className=" w-full h-full flex absolute overflow-hidden ">
@@ -79,17 +102,7 @@ const page = () => {
             onClick={() => {state.current="Chair1"}}
             />
     </div>
-    <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
-    
-        <Image
-            src= {Image2}
-            alt='chair 2 image'
-            height={700}
-            width={700}
-            className='hover:scale-150 duration-300'
-            onClick={() => {state.current="Chair2"}}
-            />
-    </div>
+   
     <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
     
         <Image
@@ -102,27 +115,6 @@ const page = () => {
             />
     </div>
 
-    <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
-        <Image
-            src= {Image4}
-            alt='chair 4 image'
-            height={700}
-            width={700}
-            className='hover:scale-150 duration-300'
-            onClick={() => {state.current="Chair4"}}
-            />
-    </div>
-   
-    <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
-        <Image
-            src= {Image5}
-            alt='chair 5 image'
-            height={700}
-            width={700}
-            className='hover:scale-150 duration-300'
-            onClick={() => {state.current="Chair5"}}
-            />
-    </div>
     <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
         <Image
             src= {Image6}
@@ -147,16 +139,6 @@ const page = () => {
 
     <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
         <Image
-            src= {Image8}
-            alt='chair 8 image'
-            height={700}
-            width={700}
-            className='hover:scale-150 duration-300'
-            onClick={() => {state.current="Chair8"}}
-            />
-    </div>
-    <div className=" app h-44 m-3 shadow-md w-64 cursor-pointer">
-        <Image
             src= {Image9}
             alt='chair 9 image'
             height={700}
@@ -171,9 +153,9 @@ const page = () => {
      </div>
   
   <>
-      <Canvas className=" h-full w-screen " shadows>
+      <Canvas className=" h-full w-screen " shadows id='canvas'>
         <Suspense fallback={null}>
-        <Scene/>
+        <Scene />
         </Suspense>
       </Canvas>
 </>
@@ -183,12 +165,12 @@ const page = () => {
       onClick={() => setOpen(!open)} />
      
      {/* Properties Tab */}
-<section className={`${state.sideTapOpen ? " h-[780px]" : "h-10 w-6 bottom-[400px]"} duration-300 w-48 md:w-80  absolute right-0 flex-row overflow-y-scroll self-center shadow-2xl bg-white rounded-md`}>
-      <header className=' font-Poppins flex gap-48 w-full bg-slate-100 p-3 h-10 text-[14px] text-stone-500 shadow-lg'> 
+<section className={`${state.sideTapOpen ? " h-[780px]" : "h-10 w-6 bottom-[400px] bg-opacity-50 bg-transparent "} duration-300 w-48 md:w-80  absolute right-0 flex-row overflow-y-scroll self-center shadow-2xl bg-white rounded-md`} >
+      <header  onClick={()=> state.sideTapOpen = !state.sideTapOpen} className=' font-Poppins flex gap-48 w-full hover:cursor-pointer bg-slate-100 p-3 h-10 text-[14px] text-stone-500 shadow-lg'> 
       
       <p> Properties </p>
       <Image src={arrowIcon} height={30} width={30} alt='arrow' className=' -rotate-90 scale-y-150 hover:cursor-pointer' 
-      onClick={()=> state.sideTapOpen = !state.sideTapOpen}/>
+     />
       </header>
 
       <section className='flex  p-3 '>
@@ -231,7 +213,7 @@ const page = () => {
        <div className=' h-full gap-4 w-full'>
          <h1 className=' text-[14px]'> Material</h1>
 
-         <section className=' grid grid-cols-5 overflow-y-scroll w-full mt-4 mr-4 gap-4 h-full p-3'>
+       { (state.current==="Chair1" || state.current==="Chair6") && <section className=' grid grid-cols-5 overflow-y-scroll w-full mt-4 mr-4 gap-4 h-full p-3'>
            <Image src = {Texture1} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture1"}} />
            <Image src = {Texture2} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture2"}} />
            <Image src = {Texture3} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture3"}} />
@@ -242,6 +224,7 @@ const page = () => {
            <Image src = {Texture8} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture8"}} />
            <Image src = {Texture9} height={50} width={50} alt='texture 1' className=' rounded-full shadow-md hover:scale-110 hover:cursor-pointer' onClick={ ()=> {state.currentTexture="Texture9"}} />
           </section>
+        }
         
       
           <hr className=' w-full mt-6'/>
@@ -257,6 +240,13 @@ const page = () => {
       </section>
 </section>
 
+<section className=' absolute top-[700px] flex h-16 p-3 gap-6 shadow-lg right-[570px] rounded-xl bg-white w-72 justify-center items-center hover:cursor-pointer hover:scale-110 duration-300'
+  onClick={takeScreenshot}
+>
+    <Image src={cameraIcon} height={40} width={40} alt='Render Icon' />
+    <h1 className=' w-full font-Poppins'> Render Your Furniture</h1>
+</section>
+   
     </section>
     </main>
   )

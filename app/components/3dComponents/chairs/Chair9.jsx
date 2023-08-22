@@ -13,8 +13,9 @@ export default function Chair9(props) {
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.chair_middle001_Material003_0.geometry} 
-    scale={[state.width* 0.517,state.height* 0.517,state.thickness* 0.517]}
-      material={materials['Material.003']} />
+    scale={[state.width* 1,state.height* 1,state.thickness* 1]}
+      material={materials['Material.003']}
+      material-color = {state.currentColor} />
     </group>
   )
 }

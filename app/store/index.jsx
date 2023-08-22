@@ -5,8 +5,8 @@ import * as THREE from "three"
 
 
 const state = proxy({
-    tabOpen : true,
-    sideTapOpen : true,
+    tabOpen : false,
+    sideTapOpen : false,
     current : "Chair1",
     currentColor : "#fff",
     currentTexture : "default",

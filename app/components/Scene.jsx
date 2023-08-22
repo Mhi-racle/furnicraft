@@ -9,13 +9,9 @@ import * as THREE from "three"
 
 // Chairs
 import Chair1 from "app/components/3dComponents/chairs/Chair1"
-import Chair2 from "app/components/3dComponents/chairs/Chair2"
 import Chair3 from "app/components/3dComponents/chairs/Chair3"
-import Chair4 from "app/components/3dComponents/chairs/Chair4"
-import Chair5 from "app/components/3dComponents/chairs/Chair5"
 import Chair6 from "app/components/3dComponents/chairs/NewChair7"
 import Chair7 from "app/components/3dComponents/chairs/NewChair6"
-import Chair8 from "app/components/3dComponents/chairs/Chair8"
 import Chair9 from "app/components/3dComponents/chairs/Chair9"
 
 
@@ -42,7 +38,7 @@ useEffect(() => {
       {/* {mesh} */}
       
        { snap.current==="Chair1" &&
-        <Chair1 castShadow/>
+        <Chair1  castShadow/>
        }
         { snap.current==="Chair2" &&
         <Chair2 castShadow/>

@@ -9,11 +9,15 @@ import { useGLTF } from '@react-three/drei'
 import state from '@/app/store'
 
 export default function Chair3(props) {
+  
+
+
   const { nodes, materials } = useGLTF('/Models/chair3.glb')
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_5.geometry} material={materials.phongE2}
-       scale={[state.width* 0.695,state.height* 0.695,state.thickness* 0.695 ]} />
+       scale={[state.width* 0.695,state.height* 0.695,state.thickness* 0.695 ]} 
+       material-color = {state.currentColor} />
     </group>
   )
 }
