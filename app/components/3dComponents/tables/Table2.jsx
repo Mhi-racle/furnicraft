@@ -29,13 +29,13 @@ export default function Table2(props) {
         material-color = {state.currentColor}
         material={materials.CHOOB} castShadow>
 
-                            {state.currentTexture==="Texture1" &&<meshStandardMaterial map={Texture1} roughness={0.8}  />} 
-                             {state.currentTexture==="Texture2" &&<meshStandardMaterial map={Texture2} roughness={0.8} />} 
-                             {state.currentTexture==="Texture3" &&<meshStandardMaterial map={Texture3} roughness={0.8} />} 
-                             {state.currentTexture==="Texture4" &&<meshStandardMaterial map={Texture4} roughness={0.8} />} 
-                             {state.currentTexture==="Texture5" &&<meshStandardMaterial map={Texture5} roughness={0.8} />} 
-                             {state.currentTexture==="Texture6" &&<meshStandardMaterial map={Texture6} roughness={0.8} />} 
-                             {state.currentTexture==="Texture7" &&<meshStandardMaterial map={Texture7} roughness={0.8} />} 
+        {state.currentTexture==="Texture1" &&<meshStandardMaterial map={Texture1} roughness={0.8}  />} 
+         {state.currentTexture==="Texture2" &&<meshStandardMaterial map={Texture2} roughness={0.8} />} 
+         {state.currentTexture==="Texture3" &&<meshStandardMaterial map={Texture3} roughness={0.8} />} 
+         {state.currentTexture==="Texture4" &&<meshStandardMaterial map={Texture4} roughness={0.8} />} 
+         {state.currentTexture==="Texture5" &&<meshStandardMaterial map={Texture5} roughness={0.8} />} 
+         {state.currentTexture==="Texture6" &&<meshStandardMaterial map={Texture6} roughness={0.8} />} 
+         {state.currentTexture==="Texture7" &&<meshStandardMaterial map={Texture7} roughness={0.8} />} 
 
           </mesh>
       </group>

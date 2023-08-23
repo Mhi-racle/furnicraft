@@ -19,7 +19,7 @@ export default function Bed3(props) {
   const Texture6 = new THREE.TextureLoader().load("../../textures/wood6/weathered_brown_planks_diff_1k.jpg")
   const Texture7 = new THREE.TextureLoader().load("../../textures/wood7/planks_brown_10_diff_1k.jpg")
 
-  
+
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/Models/bed3.glb')
   const { actions } = useAnimations(animations, group)
@@ -38,7 +38,9 @@ export default function Bed3(props) {
               <group name="victorian_bed_wood">
                 <mesh name="victorian_bed_wood_bed_wood_material_0" geometry={nodes.victorian_bed_wood_bed_wood_material_0.geometry}
                 material-color = {state.currentColor}
-                material={materials.bed_wood_material}>
+                material={materials.bed_wood_material}
+                
+                >
 
           {state.currentTexture==="Texture1" &&<meshStandardMaterial map={Texture1} roughness={0.8}  />} 
            {state.currentTexture==="Texture2" &&<meshStandardMaterial map={Texture2} roughness={0.8} />} 

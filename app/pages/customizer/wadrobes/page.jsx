@@ -41,6 +41,9 @@ const page = () => {
     state.height = 1
     state.width = 1
     state.thickness = 1
+
+    state.currentColor = "#ffffff"
+    state.currentTexture = "default"
   }
 
   //take screenshot
@@ -153,10 +156,29 @@ const page = () => {
      />
       </header>
 
-      <section className='flex  p-3 '>
-        <Image src={Image1} height={80} width={80} alt='Table1' />
-        <h1 className='relative top-7 text-[13px] ml-2'> Table 1</h1>
+     {state.currentWad === "Wad1" && <section className='flex  p-3 '>
+        <Image src={Image1} height={80} width={80} alt='Wardrobe 1'  />
+        <h1 className='relative top-7 text-[13px] ml-2'> Wardrobe 1</h1>
       </section>
+  }
+
+{state.currentWad === "Wad2" && <section className='flex  p-3 '>
+        <Image src={Image2} height={80} width={80} alt='Wardrobe 2' />
+        <h1 className='relative top-7 text-[13px] ml-2'> Wardrobe 2</h1>
+      </section>
+
+  }
+  {state.currentWad === "Wad3" && <section className='flex  p-3 '>
+        <Image src={Image3} height={80} width={80} alt='Wardrobe 3' />
+        <h1 className='relative top-7 text-[13px] ml-2'> Wardrobe 3</h1>
+      </section>
+  }
+  {state.currentWad === "Wad4" && <section className='flex  p-3 '>
+        <Image src={Image2} height={80} width={80} alt='Wardrobe 4' />
+        <h1 className='relative top-7 text-[13px] ml-2'> Wardrobe 4</h1>
+      </section>
+
+  }
       <hr/>
 
       <section className='h-full'>

@@ -1,6 +1,6 @@
 
 import Image from 'next/image';
-
+import Link from 'next/link';
 
 import PromptCard from '@/components/PromptCard';
 import Homepage from "@/public/assets/images/homepage.jpg";
@@ -16,7 +16,7 @@ import instagram from "public/assets/images/NicePng_instagram-png-logo_51215.png
 
 const Home = () => {
   return (
-    <section className="w-screen  flex-col select-none overflow-x-hidden">
+    <section className="w-screen font-Poppins  bg-white flex-col select-none overflow-x-hidden">
       
     <section className=' bg-black'>
     <Image className='h-full  w-full'
@@ -69,8 +69,13 @@ const Home = () => {
       </ul>
     </div>
 
-    <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
+    <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px]
+     text-[15px] hover:scale-105 duration-300'>
+
+    <Link href="/pages/customizer/tables" className=' w-full'>
       Open Configurator
+    </Link>
+     
       </button>
     </section>
 
@@ -102,7 +107,9 @@ const Home = () => {
     </div>
 
     <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
+    <Link href="/pages/customizer/chairs" className=' w-full'>
       Open Configurator
+    </Link>
       </button>
     </section>
 
@@ -134,7 +141,9 @@ const Home = () => {
     </div>
 
     <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
+    <Link href="/pages/customizer/wadrobes" className=' w-full'>
       Open Configurator
+    </Link>
       </button>
     </section>
 
@@ -171,7 +180,9 @@ Embrace the transformative power of a well-chosen bed as it becomes the centerpi
     </div>
 
     <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:relative duration-300 hover:scale-95'>
+    <Link href="/pages/customizer/bed" className=' w-full'>
       Open Configurator
+    </Link>
       </button>
     </section>
 
