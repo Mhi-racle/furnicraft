@@ -2,7 +2,7 @@ import '@styles/globals.css';
 import { children } from 'react';
 
 import Provider from '@components/Provider'
-import Nav from '@components/Nav';
+
 
 
 export const metadata = {
@@ -19,7 +19,7 @@ const RootLayout = ({ children}) => {
        </div>
 
        <main className="app">
-       <Nav/>
+    
 
 
         {children}
