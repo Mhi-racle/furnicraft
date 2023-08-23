@@ -11,6 +11,13 @@ import bed from "public/assets/images/deconovo-gVKmonDbotU-unsplash.jpg"
 import table from "public/assets/images/side-view-cup-coffee-small-round-table-horizontal.jpg"
 import phone from "public/assets/images/PngItem_202171.png"
 import email from "public/assets/images/NicePng_email-icon-white-png_2226601.png"
+
+import table1 from "public/images/tables/table1.png"
+import chair1 from "public/images/chairs/armchair.png"
+import wardrobe1 from "public/images/wardrobe/wadrobe3.png"
+import bed1 from "public/images/beds/bed3.png"
+
+
 import facebook from "public/assets/images/NicePng_facebook-logo-png_4625.png"
 import instagram from "public/assets/images/NicePng_instagram-png-logo_51215.png"
 
@@ -26,21 +33,94 @@ const Home = () => {
       height={300}
       
     />
+
     </section>
     
-    {/* Created to create thr illusion on gradient */}
-    <section className=' w-screen h-[460px] absolute top-6 bg-gradient-to-t from-neutral-100 to-transparent md:bg-gradient-to-r md:from-neutral-100 md:to-transparent md:h-[911px]'>
-  
+    {/* Creating gradient */}
+    <section className=' w-screen h-[460px] overflow-x-hidden absolute top-6 bg-gradient-to-t from-neutral-100 to-transparent md:bg-gradient-to-r md:from-neutral-100 md:to-transparent md:h-[911px]'>
+    <p className=' font-Poppins relative ml-40  mt-28 font-black text-7xl tracking-wide top-32 shadow-xl w-8 '> Furnicraft </p>
+    <hr className=' h-4 relative top-32 w-96 left-40 bg-amber-300'/>
+
+    <p className='relative text-[20px] left-40 top-44 tracking-widest shadow-white shadow-xl'>
+    Easily plan your furnicraft furniture with our <br className=''/> dynamic 3D configurators or 
+    choose and adapt <br/>
+    from our prefabricated furniture designs.
+    </p>
+
+    <button className=' relative bg-black text-white p-6 left-40 mt-56 w-60 hover:scale-95 duration-500 shadow-xl'>
+      
+      Start Now
+    </button>
     </section>
 
-      {/*header of our customisation website*/}
+      {/*header of our customization website*/}
      <p className='font-bold text-5xl mt-[90px] app'>Create custom-made furniture online:</p>
       
     <div className='app flex w-full md:flex-row gap-4 '>
-    <PromptCard/>
-    <PromptCard/>
-    <PromptCard/>
-    <PromptCard/>
+    <section className='mt-[50px] bg-gray-200 w-[320px] h-[400px]  app '>
+    <p className='relative right-[80px] -top-[60px] text-[10px] '>Made-to-measure</p>
+    <Image className='-mt-[40px]'
+        src={table1}
+        alt='grid'
+        height= {200}
+        width= {150}
+    />
+    <p className='font-bold relative mt-[25px]'>Tables</p>
+    <button className=' bg-black text-white w-[140px] h-[40px] text-[12px] mt-[15px] hover:scale-95 duration-500'>
+    <Link href="/pages/customizer/tables" className=' w-full'>
+      START NOW
+      </Link>
+      </button>
+   </section>
+    
+   <section className='mt-[50px] bg-gray-200 w-[320px] h-[400px]  app '>
+    <p className='relative right-[80px] -top-[60px] text-[10px] '>Made-to-measure</p>
+    <Image className='-mt-[40px]'
+        src={chair1}
+        alt='grid'
+        height= {200}
+        width= {150}
+    />
+    <p className='font-bold mt-[25px]'>Chairs</p>
+    <button className=' bg-black text-white w-[140px] h-[40px] text-[12px] mt-[15px] hover:scale-95 duration-500'>
+    <Link href="/pages/customizer/chairs" className=' w-full'>
+      START NOW
+      </Link>
+      </button>
+   </section>
+
+    <section className='mt-[50px] bg-gray-200 w-[320px] h-[400px]  app '>
+    <p className='relative right-[80px] -top-[60px] text-[10px] '>Made-to-measure</p>
+    <Image className='-mt-[40px]'
+        src={wardrobe1}
+        alt='grid'
+        height= {200}
+        width= {150}
+    />
+    <p className='font-bold mt-[25px]'>Wardrobes</p>
+    <button className=' bg-black text-white w-[140px] h-[40px] text-[12px] mt-[15px] hover:scale-95 duration-500'>
+    <Link href="/pages/customizer/wadrobes" className=' w-full'>
+      START NOW
+      </Link>
+      </button>
+   </section>
+    
+   <section className='mt-[50px] bg-gray-200 w-[320px] h-[400px]  app '>
+    <p className='relative right-[80px] -top-[60px] text-[10px] '>Made-to-measure</p>
+    <Image className='-mt-[40px]'
+        src={bed1}
+        alt='grid'
+        height= {200}
+        width= {150}
+    />
+    <p className='font-bold mt-[25px]'>Beds</p>
+    <button className=' bg-black text-white w-[140px] h-[40px] text-[12px] mt-[15px] hover:scale-95 duration-500'>
+    <Link href="/pages/customizer/bed" className=' w-full'>
+      START NOW
+      </Link>
+      </button>
+   </section>
+
     </div>
 
 {/* Table Section */}
@@ -69,7 +149,7 @@ const Home = () => {
       </ul>
     </div>
 
-    <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px]
+    <button className=' font-Poppins bg-black text-white mt-[50px] w-[250px] h-[60px]
      text-[15px] hover:scale-105 duration-300'>
 
     <Link href="/pages/customizer/tables" className=' w-full'>
@@ -106,7 +186,7 @@ const Home = () => {
       </ul>
     </div>
 
-    <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
+    <button className=' font-Poppins bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
     <Link href="/pages/customizer/chairs" className=' w-full'>
       Open Configurator
     </Link>
@@ -140,7 +220,7 @@ const Home = () => {
       </ul>
     </div>
 
-    <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
+    <button className=' font-Poppins bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:scale-105 duration-300'>
     <Link href="/pages/customizer/wadrobes" className=' w-full'>
       Open Configurator
     </Link>
@@ -161,7 +241,7 @@ const Home = () => {
 
    
     <section className=' mr-48 ml-12 w-96 '>
-    <p className='font-bold text-[33px]  mt-[70px]'>Chairs</p>
+    <p className='font-bold text-[33px]  mt-[70px]'>Beds</p>
     
     <p className='mt-[50px] text-[15px] font-serif'> 
    
@@ -179,7 +259,7 @@ Embrace the transformative power of a well-chosen bed as it becomes the centerpi
       </ul>
     </div>
 
-    <button className=' font-serif bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:relative duration-300 hover:scale-95'>
+    <button className=' font-Poppins bg-black text-white mt-[50px] w-[250px] h-[60px] text-[15px] hover:relative duration-300 hover:scale-95'>
     <Link href="/pages/customizer/bed" className=' w-full'>
       Open Configurator
     </Link>
@@ -190,8 +270,8 @@ Embrace the transformative power of a well-chosen bed as it becomes the centerpi
 
 
     <footer className=' text-white p-10 grid m-0 bg-black w-screen h-[250px] mt-[50px]'>
-      <p className='  ml-10 '>Contact us</p>
-      <section className='   md:flex-row'>
+      <p className=' app ml-10 '>Contact us</p>
+      <section className=' app'>
       <div className='flex gap-4 mt-8 ml-10'>
       <Image className=' w-10'
       src={phone}

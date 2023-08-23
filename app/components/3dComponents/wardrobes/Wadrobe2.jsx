@@ -47,8 +47,7 @@ export default function Wadrobe2(props) {
      {state.currentTexture==="Texture5" &&<meshStandardMaterial map={Texture5} roughness={0.8} />} 
      {state.currentTexture==="Texture6" &&<meshStandardMaterial map={Texture6} roughness={0.8} />} 
      {state.currentTexture==="Texture7" &&<meshStandardMaterial map={Texture7} roughness={0.8} />} 
-     {state.currentTexture==="Texture8" &&<meshStandardMaterial map={Texture8} roughness={0.8} />} 
-     {state.currentTexture==="Texture9" &&<meshStandardMaterial map={Texture9} roughness={0.8} />} 
+    
 
                   </mesh>
               </group>
