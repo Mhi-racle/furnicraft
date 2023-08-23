@@ -17,7 +17,7 @@ export default function Chair3(props) {
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Object_5.geometry} material={materials.phongE2}
        scale={[state.width* 0.695,state.height* 0.695,state.thickness* 0.695 ]} 
-       material-color = {state.currentColor} />
+       material-color = {state.currentColor} castShadow/>
     </group>
   )
 }

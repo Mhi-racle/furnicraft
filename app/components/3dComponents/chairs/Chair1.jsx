@@ -9,15 +9,16 @@ import state from '@/app/store'
 import * as THREE from "three"
 export default function Chair1(props) {
   //textures
-  const Texture1 = new THREE.TextureLoader().load("../textures/fabric1/fabric_pattern_07_col_1_1k.png")
-  const Texture2 = new THREE.TextureLoader().load("../textures/denim1.blend/textures/denmin_fabric_02_diff_1k.jpg")
-  const Texture3 = new THREE.TextureLoader().load("../textures/denim2.blend/textures/denim_fabric_diff_1k.jpg")
-  const Texture4 = new THREE.TextureLoader().load("../textures/fabric2.blend/textures/fabric_pattern_05_col_01_1k.png")
-  const Texture5 = new THREE.TextureLoader().load("../textures/leather1.blend/textures/leather_red_02_coll1_1k.png")
-  const Texture6 = new THREE.TextureLoader().load("../textures/leather2.blend/textures/brown_leather_albedo_1k.jpg")
-  const Texture7 = new THREE.TextureLoader().load("../textures/leather3.blend/textures/leather_white_diff_1k.jpg")
-  const Texture8 = new THREE.TextureLoader().load("../textures/leather4/textures/fabric_leather_02_diff_1k.jpg")
-  const Texture9 = new THREE.TextureLoader().load("../textures/leather5.blend/textures/leather_red_03_coll1_1k.png")
+  
+  const Texture1 = new THREE.TextureLoader().load("../../textures/fabric1/fabric_pattern_07_col_1_1k.png")
+  const Texture2 = new THREE.TextureLoader().load("../../textures/denim1.blend/textures/denmin_fabric_02_diff_1k.jpg")
+  const Texture3 = new THREE.TextureLoader().load("../../textures/denim2.blend/textures/denim_fabric_diff_1k.jpg")
+  const Texture4 = new THREE.TextureLoader().load("../../textures/fabric2.blend/textures/fabric_pattern_05_col_01_1k.png")
+  const Texture5 = new THREE.TextureLoader().load("../../textures/leather1.blend/textures/leather_red_02_coll1_1k.png")
+  const Texture6 = new THREE.TextureLoader().load("../../textures/leather2.blend/textures/brown_leather_albedo_1k.jpg")
+  const Texture7 = new THREE.TextureLoader().load("../../textures/leather3.blend/textures/leather_white_diff_1k.jpg")
+  const Texture8 = new THREE.TextureLoader().load("../../textures/leather4/textures/fabric_leather_02_diff_1k.jpg")
+  const Texture9 = new THREE.TextureLoader().load("../../textures/leather5.blend/textures/leather_red_03_coll1_1k.png")
   
   
 

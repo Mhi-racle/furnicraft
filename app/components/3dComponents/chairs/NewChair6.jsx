@@ -15,7 +15,7 @@ export default function NewChair6(props) {
       <mesh geometry={nodes.defaultMaterial001.geometry} 
       material={materials.DefaultMaterial} 
       scale={[state.width* 0.012,state.height* 0.012,state.thickness* 0.012]} 
-      material-color = {state.currentColor}/>
+      material-color = {state.currentColor} castShadow/>
     </group>
   )
 }

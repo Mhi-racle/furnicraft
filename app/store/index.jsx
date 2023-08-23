@@ -5,9 +5,13 @@ import * as THREE from "three"
 
 
 const state = proxy({
+    mode: "dark",
     tabOpen : false,
     sideTapOpen : false,
     current : "Chair1",
+    currentTable : "Table1",
+    currentWad : "Wad1",
+    currentBed : "Bed3",
     currentColor : "#fff",
     currentTexture : "default",
 
