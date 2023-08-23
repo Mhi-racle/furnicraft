@@ -6,8 +6,8 @@ import Nav from '@components/Nav';
 
 
 export const metadata = {
-    title: "Promptopia",
-    description: 'Discover & Share AI Prompts'
+    title: "Furnicraft",
+    description: 'Design your own space'
 }
 
 const RootLayout = ({ children}) => {
