@@ -1,30 +1,18 @@
-import '@styles/globals.css';
-import { children } from 'react';
 
-import Provider from '@components/Provider'
+import { Inter } from 'next/font/google'
+import "../styles/globals.css";
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: "Furnicraft",
-    description: 'Design your own space'
+  title: 'Furnicraft',
+  description: 'Customize Your Furniture Before Buying It',
 }
 
-const RootLayout = ({ children}) => {
+export default function RootLayout({ children }) {
   return (
-   <html lang="en">
-     <body>
-       <div className="main">
-         <div className="gradient"/>
-       </div>
-
-       <main className="app">
-    
-
-
-        {children}
-       </main> 
-     </body> 
-   </html>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
   )
 }
-
-export default RootLayout;
