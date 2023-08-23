@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 
 // images
-import grid from "@public/assets/images/9.jpg"
+import grid from "@/public/assets/images/9.jpg"
 
   export default function PromptCard () {
   return (

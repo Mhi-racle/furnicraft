@@ -1,10 +1,10 @@
-import Feed from '@components/Feed';
+
 import Image from 'next/image';
 
 
-import PromptCard from '@components/PromptCard';
-import Homepage from "@public/assets/images/homepage.jpg";
-import grid from "@public/assets/images/9.jpg"
+import PromptCard from '@/components/PromptCard';
+import Homepage from "@/public/assets/images/homepage.jpg";
+import grid from "public/assets/images/9.jpg"
 import wardrobeimg from "public/assets/images/bilal-mansuri-RHARVor_ydc-unsplash.jpg"
 import chair from "public/assets/images/steve-johnson-MqP5vi4IuSU-unsplash.jpg"
 import bed from "public/assets/images/deconovo-gVKmonDbotU-unsplash.jpg"
