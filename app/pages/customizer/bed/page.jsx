@@ -6,7 +6,6 @@ import Image from 'next/image'
 
 import SceneBed from '@/app/components/SceneBed'
 import Link from 'next/link'
-import Nav from '@/app/components/Nav'
 import { useSnapshot} from 'valtio'
 import { proxy, use } from 'valtio'
 import state from '@/app/store'

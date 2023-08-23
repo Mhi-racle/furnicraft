@@ -7,7 +7,6 @@ import ScreenCapture from '@/app/utils/ScreenCapture'
 
 import Scene from '@/app/components/Scene'
 import Link from 'next/link'
-import Nav from '@/app/components/Nav'
 import { useSnapshot} from 'valtio'
 import { proxy, use } from 'valtio'
 import state from '@/app/store'
