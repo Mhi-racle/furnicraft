@@ -3,8 +3,6 @@ import { children } from 'react';
 
 import Provider from '@components/Provider'
 
-
-
 export const metadata = {
     title: "Furnicraft",
     description: 'Design your own space'
