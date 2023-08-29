@@ -1,4 +1,5 @@
 'use client'
+
 import React, { createRef, useState } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { Suspense } from 'react'
@@ -8,7 +9,7 @@ import ScreenCapture from '@/app/utils/ScreenCapture'
 import Scene from '@/app/components/Scene'
 import Link from 'next/link'
 import { useSnapshot} from 'valtio'
-import { proxy, use } from 'valtio'
+
 import state from '@/app/store'
 import { SketchPicker } from 'react-color'
 
@@ -54,6 +55,7 @@ const page = () => {
     
   }
   const [open, setOpen] = useState(true)
+
   const snap = useSnapshot(state)
 
   function ResetDimensions(){
@@ -173,6 +175,9 @@ const page = () => {
         </Suspense>
       </Canvas>
   </section>
+
+
+  
       {/* Toggle Icon */}
       <Image src={arrowIcon} height={50} width={50} alt='arrow' 
       className={`${open ? "right-[70em]  scale-75 rotate-180" : "right-[85em] scale-50 rotate-0 " } absolute cursor-pointer duration-500 top-40  border-2 border-black  rounded-full shadow-md  `}
